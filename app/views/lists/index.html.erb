@@ -1,0 +1,7 @@
+<div class="container">
+  <%= link_to 'Create a new list', new_list_path, class:"btn btn-primary" %>
+  <H1>My list view</H1>
+  <% @lists.each do |list| %>
+    <p><%= list.name %> <span><%= link_to 'View Details', list_path(list) , class: 'btn btn-secondary'%></span></p>
+  <% end %>
+</div>

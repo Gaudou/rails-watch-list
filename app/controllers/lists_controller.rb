@@ -5,8 +5,8 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    id = params[:id].to_i
-    @bookmark = Bookmark.where(list_id: id)
+    list_id = params[:id].to_i
+    @bookmarks = Bookmark.where(list_id: list_id)
   end
 
   def new

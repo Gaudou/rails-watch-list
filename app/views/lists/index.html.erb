@@ -1,7 +1,21 @@
-<div class="container">
-  <%= link_to 'Create a new list', new_list_path, class:"btn btn-primary" %>
-  <H1>My list view</H1>
-  <% @lists.each do |list| %>
-    <p><%= list.name %> <span><%= link_to 'View Details', list_path(list) , class: 'btn btn-secondary'%></span></p>
-  <% end %>
+<div class="banner mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.plex.tv/wp-content/uploads/2018/03/hero-movie-tv.jpg);">
+  <div class="container">
+    <h1 class="mb-5">My Movie List by @Gaudou</h1>
+    <%= link_to '+ Create a new list', new_list_path, class:"btn btn-danger" %>
+  </div>
 </div>
+
+<div class="container">
+  <h1><i class="fas fa-heart"></i> Your Favorites</h1>
+   <% @lists.each do |list| %>
+    <div class="notification ">
+      <div class="notification-content">
+        <h4><%= list.name %></h4>
+        <%= link_to 'View Details', list_path(list) , class: 'btn btn-secondary'%>
+
+      </div>
+    </div>
+    <% end %>
+</div>
+
+

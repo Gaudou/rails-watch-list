@@ -1,6 +1,9 @@
 <div class="container">
   <h1> <%= @list.name %> </h1>
+  <%= @bookmark.each do |bookmark| %>
+  <p> <%= bookmark.comment %>  </p>
+  <% end %>
   <span> <%= link_to 'Back To Home', lists_path, class:'btn btn-secondary'%> </span>
-  <span> <%= link_to 'Back To Home', lists_path, class:'btn btn-secondary'%> </span>
+  <span> <%= link_to 'Add a Movie', new_list_bookmark_path(@list), class:'btn btn-secondary'%> </span>
 
 </div>

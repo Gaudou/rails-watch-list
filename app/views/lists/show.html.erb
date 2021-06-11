@@ -13,7 +13,7 @@
         <p class=""><h6>Description:</h6>  <%= @movie.overview %></p>
         <p class=""><h6>Rating :</h6>  <%= @movie.rating %></p>
         <p class=""><h6>Comment :</h6>  <%= bookmark.comment %></p>
-        <span> <%= link_to 'Remove from list', bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" },  class:'btn btn-secondary mb-2'%> </span>
+        <span> <%= link_to '- Remove from list', bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" },  class:'btn btn-warning mb-2'%> </span>
       </div>
     </div>
 

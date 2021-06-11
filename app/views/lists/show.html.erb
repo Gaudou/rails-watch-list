@@ -1,25 +1,34 @@
-<div class="container">
+<div class="container mb-5">
    <h1><i class="fas fa-video"></i> <%= @list.name %></h1>
+   <span> <%= link_to '+ Pin a Movie', new_list_bookmark_path(@list), class:'btn btn-warning'%> </span>
+</div>
 
-  <div class="container d-flex m-5">
-    <span> <%= link_to '+ Pin a Movie', new_list_bookmark_path(@list), class:'btn btn-warning'%> </span>
-
+<div class="container">
+  <div class="cards">
     <% @bookmarks.each do |bookmark| %>
     <% @movie = Movie.find(bookmark.movie_id) %>
+    <div class="card-category" style="background-image: url(<%=@movie.poster_url%>)">
+      <div class="card-content">
+        <h5 class=""><%= @movie.title %></h5>
+        <p class=""><h6>Description:</h6>  <%= @movie.overview %></p>
+        <p class=""><h6>Rating :</h6>  <%= @movie.rating %></p>
+        <p class=""><h6>Comment :</h6>  <%= bookmark.comment %></p>
+        <span> <%= link_to 'Remove from list', bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" },  class:'btn btn-secondary mb-2'%> </span>
+      </div>
+    </div>
 
-    <div class="card rounded-lg m-5 mx-auto" style="width: 200px;">
-     <img src="<%=@movie.poster_url%>" class="card-img-top" alt="...">
-     <div class="card-body">
-       <h5 class="card-title"><%= @movie.title %></h5>
-       <p class="card-text"><strong>Description:</strong>  <%= @movie.overview %></p>
-       <p class="card-text"><strong>Rating :</strong>  <%= @movie.rating %></p>
-       <p class="card-text"><strong>Comment :</strong>  <%= bookmark.comment %></p>
-       <span> <%= link_to 'Remove from list', bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" },  class:'btn btn-secondary'%> </span>
-     </div>
-   </div>
+
+
     <% end %>
   </div>
-
-  <span> <%= link_to '- Delete this list', list_path(@list), method: :delete, data: { confirm: "Are you sure?" },  class:'btn btn-danger'%> </span>
 </div>
+
+
+
+
+<div class="container mt-5">
+    <span> <%= link_to '- Delete this list', list_path(@list), method: :delete, data: { confirm: "Are you sure?" },  class:'btn btn-danger'%> </span>
+</div>
+
+
 

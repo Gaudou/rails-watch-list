@@ -11,15 +11,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <div>
     <%= render "shared/navbar" %>
+
+  <div class="container justify-content-center">
+    <%= yield %>
   </div>
 
-  <body class="container justify-content-center">
-    <%= yield %>
-  </body>
 
-  <footer>
     <%= render "shared/footer" %>
-  </footer>
 </html>

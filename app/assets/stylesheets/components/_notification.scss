@@ -2,9 +2,11 @@
   display: flex;
   align-items: center;
   margin-bottom: 8px;
-  background: white;
+  background: #1f2124;
   padding: 8px 16px;
-  border: 1px solid rgb(235,235,235);
+  border-radius: 4px;
+  color: white;
+  border-top: 1px solid #f7a440;
 }
 
 .notification .notification-content {
